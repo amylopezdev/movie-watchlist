@@ -1,3 +1,11 @@
-const App = () => <h1>Movie Watchlist</h1>
+import { Routes, Route } from "react-router-dom";
 
-export default App
+const App = () => (
+  <Routes>
+    <Route path="/" />
+    <Route path="/movie/:id" />
+    <Route path="/watchlist" />
+  </Routes>
+);
+
+export default App;
