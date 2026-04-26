@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { getTrendingMovies } from "../api/tmdb";
 import type { Movie } from "../types/movie";
+import MovieCard from "../components/MovieCard/MovieCard";
+import styles from "./HomePage.module.css";
 
 const HomePage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -18,7 +20,21 @@ const HomePage = () => {
     fetchMovies();
   }, []);
 
-  return <h1>Home</h1>;
+  return (
+    <section className={styles.page}>
+      <h1 className={styles.heading}>Trending Movies</h1>
+      <div className={styles.grid}>
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            title={movie.title}
+            thumbnail={movie.poster_path}
+            releaseDate={movie.release_date}
+          />
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default HomePage;

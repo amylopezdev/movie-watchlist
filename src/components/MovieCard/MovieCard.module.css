@@ -1,0 +1,46 @@
+.card {
+  cursor: pointer;
+}
+
+.posterWrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.poster {
+  width: 100%;
+  display: block;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.posterPlaceholder {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #2a3a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7f93;
+  font-size: 0.85rem;
+}
+
+.info {
+  padding: 10px 2px 4px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.releaseDate {
+  color: #8fa3b8;
+  font-size: 0.8rem;
+}
