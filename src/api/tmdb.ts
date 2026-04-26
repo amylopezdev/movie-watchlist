@@ -1,9 +1,16 @@
+import type { Movie } from "../types/movie";
+
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
-export async function getTrendingMovies() {
+type TrendingMoviesResponse = {
+  page: number;
+  results: Movie[];
+};
+
+export async function getTrendingMovies(): Promise<TrendingMoviesResponse> {
   const response = await fetch(
-    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`
+    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`,
   );
 
   if (!response.ok) {
