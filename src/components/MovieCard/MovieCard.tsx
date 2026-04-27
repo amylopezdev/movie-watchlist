@@ -8,7 +8,7 @@ type MovieCardProps = {
 
 const MovieCard = ({ title, thumbnail, releaseDate }: MovieCardProps) => {
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.posterWrapper}>
         {thumbnail ? (
           <img
@@ -30,7 +30,7 @@ const MovieCard = ({ title, thumbnail, releaseDate }: MovieCardProps) => {
           <span className={styles.releaseDate}>Release date unknown</span>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 
